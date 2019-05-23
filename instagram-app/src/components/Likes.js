@@ -1,7 +1,7 @@
 //Likes
 import React from 'react';
 import './PostContainer/PostContainer.css';
-import Heart from './img/instagram-icon.png';
+import Heart from './img/ig-heart.png';
 //Here the likes section is separated into its own component because it will
 //need a method built on to it to increment the likes. Eventually it will be
 //built out into a class container to deal with its own functionality.
