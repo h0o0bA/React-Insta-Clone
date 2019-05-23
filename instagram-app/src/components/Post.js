@@ -25,6 +25,7 @@ const Post = props => {
                 </div>
                   <Likes likes={props.post.likes} />
                   <CommentSection comments={props.post.comments}/>
+                  
               </div>
     );
     }
