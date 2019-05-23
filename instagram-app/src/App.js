@@ -4,6 +4,7 @@ import dummyData from './components/dummy-data';
 import SearchBar from './components/SearchBar/SearchBar';
 import PostContainer from './components/PostContainer/PostContainer';
 
+
 class App extends React.Component {
   constructor(){
     super();
