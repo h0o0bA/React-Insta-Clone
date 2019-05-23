@@ -10,43 +10,44 @@ import PropTypes from 'prop-types';
 //elements of the array can be referrenced now by the same prop. All instances
 //of post are instances of dummyData being passed down from App.js
 const Post = props => {
-    return (
-      <div className="header">
+    return(  <div>
+        <div>
           <PostHeader
-          username={props.post.username}
           thumbnailUrl={props.post.thumbnailUrl}
+          username={props.post.username}
           />
-      <div className="post">
-        <img
-        alt="picture"
-        src={props.post.imageUrl}
-        />
+        </div>
+        <div>
+          <img
+            alt="posted picture"
+            src={props.post.imageUrl}
+            />
+        </div>
+          <Likes likes={props.post.likes}/>
+          <CommentSection comments={props.post.comments}/>
       </div>
-        <Likes like={props.post.likes} />
-        <CommentSection comments={props.post.comments}/>
-      </div>
-    )
-  }
-  
-  Post.propTypes = {
-    dummyData: PropTypes.arrayOf(
-      PropTypes.shape({
-        username: PropTypes.string,
-        thumbnailUrl: PropTypes.string,
-        imageUrl: PropTypes.string,
-        likes: PropTypes.number,
-        comments: PropTypes.arrayOf(
-          PropTypes.shape({
-            text: PropTypes.string,
-            username: PropTypes.string
-          })
-        )
-      })
-    )
-  }
-  
-  Post.defaultProps = {
-    dummyData: []
-  }
-  
-  export default Post;  
+    );
+    }
+    
+    Post.propTypes = {
+      dummyData: PropTypes.arrayOf(
+        PropTypes.shape({
+          username: PropTypes.string,
+          thumbnailUrl: PropTypes.string,
+          imageUrl: PropTypes.string,
+          likes: PropTypes.number,
+          comments: PropTypes.arrayOf(
+            PropTypes.shape({
+              text: PropTypes.string,
+              username: PropTypes.string
+            })
+          )
+        })
+      )
+    }
+    
+    Post.defaultProps = {
+      dummyData: []
+    }
+    
+    export default Post;

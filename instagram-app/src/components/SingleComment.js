@@ -3,13 +3,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Comment = props => {
-  return (
+  return(
     <div>
-      <p>{props.comment.text}</p>
-      <p>{props.comment.username}</p>
+      <p>{props.com.text}</p>
+      <p>{props.com.username}</p>
     </div>
-  );
-};
+  )
+}
 
 Comment.propTypes = {
   dummyData: PropTypes.arrayOf(
