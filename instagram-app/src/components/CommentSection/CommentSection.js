@@ -1,7 +1,7 @@
 //CommentSection
 import React from 'react';
-import PostInput from './PostInput';
-import Comment from './SingleComment.js';
+import PostInput from '../PostInput';
+import Comment from '../SingleComment.js';
 
 class CommentSection extends React.Component {
   constructor(props){

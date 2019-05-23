@@ -6,7 +6,6 @@ import PostContainer from './components/PostContainer/PostContainer';
 import CommentSection from './components/CommentSection/CommentSection';
 
 
-
 class App extends React.Component {
   constructor(){
     super();
@@ -21,11 +20,12 @@ class App extends React.Component {
   return (
     <div className="App">
       <SearchBar />
-      <PostContainer posts={this.state.data}/>
+      <PostContainer posts={this.state.data} />
     </div>
   );
 }
 }
+
 
 
 export default App;
