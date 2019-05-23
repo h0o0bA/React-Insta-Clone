@@ -1,8 +1,9 @@
 //CommentSection
 import React from 'react';
+import './CommentSection.css';
 import PostInput from '../PostInput';
 import Comment from '../SingleComment.js';
-import './CommentSection.css';
+
 
 class CommentSection extends React.Component {
     constructor(props){
@@ -29,7 +30,7 @@ class CommentSection extends React.Component {
     return (
       <div>
         <div>
-          {this.state.comments.map((item) => <Comment com={item} />)}
+          {this.state.comments.map((item, i) => <Comment com={item} key={i}/>)}
         </div>
           <div className="newComment">
             <p><strong>coolguy420</strong> {this.state.comment}</p>

@@ -1,17 +1,22 @@
 //Searchbar
 import React from 'react';
+import Icon from '../img/instagram-icon.png';
+import './SearchBar.css';
 
- const SearchBar = props => {
+const SearchBar = props => {
   return(
     <div className="search-container">
       <div className="logo">
-        <img src="../img/instagram-icon.png" alt="instagram camera"/>
+        <img src={Icon} alt="instagram icon"/>
       </div>
-      <div className="search">
-        <input type="text" />
+      <form className="search">
+        <input type="text" placeholder="search" value={props.search} onChange={props.change}/>
+      </form>
+      <div className="searchButton">
+        <button onClick={props.searchGram}>enter</button>
       </div>
     </div>
   )
 }
 
- export default SearchBar;
+export default SearchBar;
