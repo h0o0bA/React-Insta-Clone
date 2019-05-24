@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import dummyData from './components/dummy-data';
-import PostPage from './components/PostPage.js';
+import PostPage from './components/PostPage';
 
 class App extends React.Component {
   constructor(){

@@ -1,5 +1,6 @@
 //post
 import React from 'react';
+import './Post.css';
 import CommentSection from './CommentSection/CommentSection';
 import PostHeader from './PostHeader.js';
 import Likes from './Likes.js';

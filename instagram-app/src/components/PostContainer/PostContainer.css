@@ -1,14 +1,18 @@
 /* //PostContainer css */
 .header {
     display: flex;
-    margin-left: 17%;
     margin-bottom: 15px;
   
   }
-  
-  .userName {
-    margin-left: -4%;
+
+  div.header {
+    text-align: left;
+  }
+
+  div.userName {
+    text-align: left;
     margin-top: 14px;
+    margin-left: -80px;
   }
   
   .thumbnail img{
@@ -19,17 +23,16 @@
   
   .likes {
     text-align: left;
-    margin-left: 22%;
     margin-top: 10px;
   }
   
   .heart img{
-    width: 2.5%;
+    width: 5%;
   
   }
   
   .heart {
-    margin-left: -50%;
+    text-align: left;
     margin-top: 10px;
   }
   
