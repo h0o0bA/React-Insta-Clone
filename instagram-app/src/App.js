@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import dummyData from './components/dummy-data';
 import PostPage from './components/PostPage';
+import { Button } from 'reactstrap';
+
 
 class App extends React.Component {
   constructor(){
