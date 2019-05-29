@@ -1,36 +1,30 @@
-import React from 'react';
+import React, { Component } from "react";
 import './App.css';
 import dummyData from './components/dummy-data';
 import PostPage from './components/PostPage';
 import { Button } from 'reactstrap';
+import Login from './components/Login/Login'
+import withAuthenticate from './components/Authentication/Authenticate'
 
 
-class App extends React.Component {
-  constructor(){
+class App extends Component {
+  constructor() {
     super();
-    this.state={
-      data: [],
-      input: "",
-      search: dummyData
-
-    }
-  }
-
-  componentDidMount () {
-    this.setState({data: dummyData});
+    this.state = {};
   }
 
 
-  render(){
-  return (
-    <div className="App">
-    <span>{this.state.input}</span>
-      <PostPage />
-    </div>
-  );
-}
+ 
+
+  render() {
+    return (
+      <div className="App">
+        <Comp/>
+      </div>
+    );
+  }
 }
 
-
+const Comp = withAuthenticate(PostPage)(Login);
 
 export default App;
