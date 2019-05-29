@@ -1,49 +1,65 @@
 //CommentSection
-import React from 'react';
-import PostInput from '../PostInput';
-import Comment from '../SingleComment.js';
+import React, { Component } from "react";
+import PropTypes from 'prop-types';
+import Comment from '../SingleComment'
 import './CommentSection.css';
 
-class CommentSection extends React.Component {
-  constructor(props){
-    super(props);
+
+
+
+
+class CommentSection extends Component {
+  constructor(props) {
+    super();
     this.state = {
-      comments: props.comments,
-      msg: '',
-      comment: ''
-    }
+      //set initial comment state to empty string 
+      comments: props.comments, comment: ''
+    };
   }
+  //bind input to state on change
 
-changeHandler = e => {
-  this.setState({msg: e.target.value});
-}
+  commentHandler = e => {
+    this.setState({ comment: e.target.value });
+  };
 
-post = () => {
-  this.setState({comment: `${this.state.msg}`})
-}
+  AddComment = e => {
+    e.preventDefault();
+
+   const newComment = { text: this.state.comment, username: "NewUser2019" }
+   
+    this.setState({
+      comments: [...this.state.comments, newComment], comment:''
+    }
+    
+    )
+   
+  };
 
 //Here, the comments section of the array is mapped over, returning each item of the comment
 //section. The comment section is combined with an input because the input needs to be
 //rendered in and interact with the comment section.
-  render(){
-  return (
-    <div>
-      <div>
-        {this.state.comments.map((item, i) => <Comment com={item} key={i}/>)}
+
+  render() {
+
+    return (
+      <div className="CommentBox">
+      {this.state.comments.map((e, index) => <Comment key={index} comment={e} />)}
+      <form onSubmit= {this.AddComment}>
+        <input type="text" placeholder="Add comment... " value={this.state.comment} onChange={this.commentHandler}/>
+        {/* <CommentInput comment={this.state.comment} submitComment={this.AddComment} changeComment={this.commentHandler}/> */}
+      </form>
       </div>
-        <div className="newComment">
-          <p><strong>coolguy420</strong> {this.state.comment}</p>
-        </div>
-          <div className="input">
-            <PostInput
-            comment={this.state.msg}
-            changeHandler={this.changeHandler}
-            change={this.post}
-            />
-          </div>
-    </div>
-  );
+    );
+  }
+
 }
-}
+
+
+CommentSection.propTypes = {
+  comments: PropTypes.arrayOf(
+    PropTypes.shape({ text: PropTypes.string, username: PropTypes.string })
+  )
+};
+
 
 export default CommentSection;

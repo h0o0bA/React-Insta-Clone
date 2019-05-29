@@ -1,8 +1,7 @@
 //PostPage
 import React from 'react';
-import PostContainer from './PostContainer/PostContainer.js';
+import PostContainer from './PostContainer/PostContainer';
 import SearchBar from './SearchBar/SearchBar.js';
-import CommentSection from './CommentSection/CommentSection.js';
 import dummyData from './dummy-data';
 
 class PostPage extends React.Component {
@@ -32,7 +31,7 @@ class PostPage extends React.Component {
   }
   render(){
     return(
-      <div>
+      <div className="StyledComment">
         <SearchBar search={this.state.input} change={this.changeHandler} searchGram={this.find}/>
         <PostContainer posts={this.state.data} />
       </div>

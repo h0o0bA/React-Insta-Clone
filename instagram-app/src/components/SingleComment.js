@@ -4,31 +4,24 @@ import PropTypes from 'prop-types';
 import './CommentSection/CommentSection.css';
 
 
-const Comment = props => {
-  return(
-    <div className="comments">
 
-        <p><strong>{props.com.username}</strong> {props.com.text}</p>
-        <p>{props.com.newComment}</p>
+const Comment = props => {
+
+
+  return (
+    <div cl>
+      <span className="user">~{props.comment.username} </span>
+      <span className="commententered">{props.comment.text}</span>
+      
     </div>
-  )
-}
+  );
+};
 
 Comment.propTypes = {
-  dummyData: PropTypes.arrayOf(
-    PropTypes.shape({
-      comments: PropTypes.arrayOf(
-        PropTypes.shape({
-          text: PropTypes.string,
-          username: PropTypes.string
-        })
-      )
-    })
-  )
-}
-
-Comment.defaultProps = {
-  dummyData: []
-}
+  comment: PropTypes.shape({
+    text: PropTypes.string,
+    username: PropTypes.string
+  })
+};
 
 export default Comment;

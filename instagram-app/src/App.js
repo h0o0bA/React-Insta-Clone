@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import './App.css';
 import dummyData from './components/dummy-data';
 import PostPage from './components/PostPage';
-import { Button } from 'reactstrap';
 import Login from './components/Login/Login'
 import withAuthenticate from './components/Authentication/Authenticate'
 
