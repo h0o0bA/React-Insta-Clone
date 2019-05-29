@@ -2,6 +2,8 @@
 import React from 'react';
 import Icon from '../img/instagram-icon.png';
 import './SearchBar.css';
+import { Button } from 'reactstrap';
+
 
 const SearchBar = props => {
   return(

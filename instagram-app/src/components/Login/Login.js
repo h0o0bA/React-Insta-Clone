@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { Button, Form, Input } from 'reactstrap';
+import './Login.css';
+
 
 class Login extends Component {
     
@@ -14,22 +17,31 @@ class Login extends Component {
 
       loginHandle =(e)=>{
         const user = this.state.username;
-        localStorage.setItem('user', user);
+        window.localStorage.setItem('user', user);
         window.location.reload();
       };
       
-
+   
     render() {
+     
+
         return (
-            <div>
-                <form>
-                    <input onChange={this.databinder} value={this.state.username} type="text" placeholder="Enter User Name" ></input>
-                    <input onChange={this.databinder} value={this.state.password} type="password" placeholder="password" ></input>
-                    <button onClick={this.loginHandle}>Log In</button > 
-                </form>
-            </div>
+            
+              <div className="StyledDiv">
+                <Form>
+                    <div className="logintitle">Instagram</div>
+                    <Input name="username" onChange={this.databinder} value={this.state.username} type="text" placeholder="Enter User Name" ></Input>
+                    <Input name ="password" onChange={this.databinder} value={this.state.password} type="password" placeholder="password" ></Input>
+                    <Button  onClick={this.loginHandle} >Log In</Button > <br/>
+                    <div className="passwordlink"> 
+                    <a href="#">Forgot Password?</a></div>
+                </Form>
+                </div>
+            
         );
     }
 }
 
 export default Login;
+
+
