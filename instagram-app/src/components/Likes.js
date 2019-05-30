@@ -1,41 +1,62 @@
 //Likes
-import React from 'react';
-import './PostContainer/PostContainer.css';
-import Heart from './img/ig-heart.png';
+import React from "react";
+// import './PostContainer/PostContainer.css';
+import Heart from "./img/ig-heart.png";
+import styled from "styled-components";
+
+const LikesDiv = styled.div`
+  .heart {
+    text-align: left;
+    margin-top: 10px;
+
+    &:hover {
+      cursor: pointer;
+      transform: scaleX(1.2);
+      margin-left: 50px;
+    }
+  }
+
+  .heart img {
+    width: 5%;
+  }
+
+  .likes {
+    text-align: left;
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+`;
+
 //Here the likes section is separated into its own component because it will
 //need a method built on to it to increment the likes. Eventually it will be
 //built out into a class container to deal with its own functionality.
 class Likes extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
       likes: props.likes
-    }
+    };
   }
 
-likePost = () => {
-  this.setState((prevState)=>{return {likes: prevState.likes +1}});
+  likePost = () => {
+    this.setState(prevState => {
+      return { likes: prevState.likes + 1 };
+    });
+  };
+
+  render() {
+    return (
+      <LikesDiv>
+        <div className="heart">
+          <img alt="insta-heart" src={Heart} onClick={this.likePost} />
+        </div>
+        <div className="likes">
+          <strong>{this.state.likes} likes</strong>
+        </div>
+      </LikesDiv>
+    );
+  }
 }
 
-  render(){
-  return(
-    <div>
-    <div className="heart">
-      <img
-      alt="insta-heart"
-      src={Heart}
-      onClick={this.likePost}
-      />
-    </div>
-    <div className="likes">
-      <strong>{this.state.likes} likes</strong>
-    </div>
-    </div>
-  )
-}
-}
-
-Likes.propTypes = {
-
-}
+Likes.propTypes = {};
 export default Likes;

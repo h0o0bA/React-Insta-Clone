@@ -2,7 +2,33 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import Comment from "../SingleComment";
-import "./CommentSection.css";
+// import "./CommentSection.css";
+import styled from "styled-components";
+
+const CommentBox = styled.div`
+  input {
+    border: white;
+    border-top: solid gray 1px;
+    //border-right: solid gray 1px;
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    padding-left: 2%;
+    padding-top: ;
+  }
+
+  .CommentInput {
+    text-align: left;
+    border: white;
+    border-top: solid gray 1px;
+    //border-right: solid gray 1px;
+    margin-top: 10px;
+    width: 100%;
+    height: 50px;
+    padding-left: 2%;
+    padding-top: ;
+  }
+`;
 
 class CommentSection extends Component {
   constructor(props) {
@@ -40,7 +66,7 @@ class CommentSection extends Component {
 
   render() {
     return (
-      <div className="CommentBox">
+      <CommentBox>
         {this.state.comments.map((e, index) => (
           <Comment key={index} comment={e} />
         ))}
@@ -54,7 +80,7 @@ class CommentSection extends Component {
           />
           {/* <CommentInput comment={this.state.comment} submitComment={this.AddComment} changeComment={this.commentHandler}/> */}
         </form>
-      </div>
+      </CommentBox>
     );
   }
 }

@@ -1,9 +1,26 @@
 //Searchbar
 import React from "react";
 import Icon from "../img/instagram-icon.png";
-import "./SearchBar.css";
+// import "./SearchBar.css";
 import { Button } from "reactstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import styled from "styled-components";
+
+const SearchContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 40px;
+
+}
+.logo {
+  margin-top: -20px;
+}
+
+.LogoutButton {
+  margin-right: -50px;
+}
+`;
 
 const ClearUser = e => {
   window.localStorage.removeItem("user");
@@ -12,7 +29,7 @@ const ClearUser = e => {
 
 const SearchBar = props => {
   return (
-    <div className="search-container">
+    <SearchContainer>
       <div className="logo">
         <img src={Icon} alt="instagram icon" />
       </div>
@@ -34,7 +51,7 @@ const SearchBar = props => {
           Logout
         </Button>
       </div>
-    </div>
+    </SearchContainer>
   );
 };
 
