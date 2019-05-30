@@ -45,7 +45,7 @@ class CommentSection extends Component {
       <div className="CommentBox">
       {this.state.comments.map((e, index) => <Comment key={index} comment={e} />)}
       <form onSubmit= {this.AddComment}>
-        <input type="text" placeholder="Add comment... " value={this.state.comment} onChange={this.commentHandler}/>
+        <input className="CommentInput" type="text" placeholder="Add comment... " value={this.state.comment} onChange={this.commentHandler}/>
         {/* <CommentInput comment={this.state.comment} submitComment={this.AddComment} changeComment={this.commentHandler}/> */}
       </form>
       </div>

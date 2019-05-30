@@ -14,3 +14,12 @@
   
   .search {
   }
+
+.searchButton {
+  margin-left: -40px;
+}
+
+.LogoutButton {
+margin-left: 140px;
+margin-right: -50px;
+}

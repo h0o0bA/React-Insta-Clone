@@ -4,6 +4,11 @@ import Icon from '../img/instagram-icon.png';
 import './SearchBar.css';
 import { Button } from 'reactstrap';
 
+const ClearUser=(e)=>{
+  
+  window.localStorage.removeItem('user');
+  window.location.reload();
+};
 
 const SearchBar = props => {
   return(
@@ -16,6 +21,9 @@ const SearchBar = props => {
       </form>
       <div className="searchButton">
         <button onSubmit={props.searchGram}>Search</button>
+      </div>
+      <div className="LogoutButton">
+        <button onClick={ClearUser}>Logout</button>
       </div>
     </div>
   )

@@ -16,7 +16,7 @@ Input{
   background-color:F5F5F5
 
 }
- Button{
+.LoginButton {
    margin-top: 10px;
    background-color: #399DF0;
    width: 80%;
