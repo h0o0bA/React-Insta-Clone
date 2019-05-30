@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import './App.css';
-import dummyData from './components/dummy-data';
-import PostPage from './components/PostPage';
-import Login from './components/Login/Login'
-import withAuthenticate from './components/Authentication/Authenticate'
-
+import "./App.css";
+import dummyData from "./components/dummy-data";
+import PostPage from "./components/PostPage";
+import Login from "./components/Login/Login";
+import withAuthenticate from "./components/Authentication/Authenticate";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
   constructor() {
@@ -12,13 +12,10 @@ class App extends Component {
     this.state = {};
   }
 
-
- 
-
   render() {
     return (
       <div className="App">
-        <Comp/>
+        <Comp />
       </div>
     );
   }

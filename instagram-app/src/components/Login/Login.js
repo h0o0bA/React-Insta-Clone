@@ -1,47 +1,57 @@
-import React, { Component } from 'react';
-import { Button, Form, Input } from 'reactstrap';
-import './Login.css';
-
+import React, { Component } from "react";
+import { Button, Form, Input } from "reactstrap";
+import "./Login.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 class Login extends Component {
-    
-    constructor(props) {
-        super(props);
-        this.state = {
-          username: '',
-          password: ''
-        };
-      }
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: "",
+      password: ""
+    };
+  }
 
-      databinder=(e)=>{this.setState({ [e.target.name]: e.target.value });}
+  databinder = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
-      loginHandle =(e)=>{
-        const user = this.state.username;
-        window.localStorage.setItem('user', user);
-        window.location.reload();
-      };
-      
-   
-    render() {
-     
+  loginHandle = e => {
+    const user = this.state.username;
+    window.localStorage.setItem("user", user);
+    window.location.reload();
+  };
 
-        return (
-            
-              <div className="StyledDiv">
-                <Form>
-                    <div className="logintitle">Instagram</div>
-                    <Input name="username" onChange={this.databinder} value={this.state.username} type="text" placeholder="Enter User Name" ></Input>
-                    <Input name ="password" onChange={this.databinder} value={this.state.password} type="password" placeholder="password" ></Input>
-                    <Button  onClick={this.loginHandle} >Log In</Button > <br/>
-                    <div className="passwordlink"> 
-                    <a href="#">Forgot Password?</a></div>
-                </Form>
-                </div>
-            
-        );
-    }
+  render() {
+    return (
+      <div className="StyledDiv">
+        <Form>
+          <div className="logintitle">Instagram</div>
+          <Input
+            name="username"
+            onChange={this.databinder}
+            value={this.state.username}
+            type="text"
+            placeholder="Enter User Name"
+          />
+          <Input
+            name="password"
+            onChange={this.databinder}
+            value={this.state.password}
+            type="password"
+            placeholder="password"
+          />
+          <Button className="LoginButton" onClick={this.loginHandle}>
+            Log In
+          </Button>{" "}
+          <br />
+          <div className="passwordlink">
+            <a href="#">Forgot Password?</a>
+          </div>
+        </Form>
+      </div>
+    );
+  }
 }
 
 export default Login;
-
-
