@@ -1,41 +1,42 @@
 //PostPage
-import React from 'react';
-import PostContainer from './PostContainer/PostContainer';
-import SearchBar from './SearchBar/SearchBar.js';
-import dummyData from './dummy-data';
+import React from "react";
+import PostContainer from "./PostContainer/PostContainer";
+import SearchBar from "./SearchBar/SearchBar.js";
+import dummyData from "./dummy-data";
 
 class PostPage extends React.Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       data: dummyData
-    }
+    };
   }
-
 
   changeHandler = e => {
-    this.setState({input: e.target.value})
-  }
+    this.setState({ input: e.target.value });
+  };
 
   find = event => {
-    const posts = this.state.data.filter(post=>{
-      if(post.username===this.state.input){
+    const posts = this.state.data.filter(post => {
+      if (post.username === this.state.input) {
         return true;
-      }
-      else {
+      } else {
         return false;
       }
-    })
-    this.setState({search: posts})
-
-  }
-  render(){
-    return(
-      <div className="StyledComment">
-        <SearchBar search={this.state.input} change={this.changeHandler} searchGram={this.find}/>
+    });
+    this.setState({ search: posts });
+  };
+  render() {
+    return (
+      <div>
+        <SearchBar
+          search={this.state.input}
+          change={this.changeHandler}
+          searchGram={this.find}
+        />
         <PostContainer posts={this.state.data} />
       </div>
-    )
+    );
   }
 }
 

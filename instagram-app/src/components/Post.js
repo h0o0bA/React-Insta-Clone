@@ -1,8 +1,8 @@
 //post
 import React from "react";
 import CommentSection from "./CommentSection/CommentSection";
-import PostHeader from "./PostHeader.js";
-import Likes from "./Likes.js";
+import PostHeader from "./PostHeader";
+import Likes from "./Likes";
 import PropTypes from "prop-types";
 
 //Here, all aspects of the dummyData are combined into one component so that

@@ -5,19 +5,15 @@ import Heart from "./img/ig-heart.png";
 import styled from "styled-components";
 
 const LikesDiv = styled.div`
-  .heart {
+  img.heart {
+    width: 5%;
     text-align: left;
     margin-top: 10px;
 
     &:hover {
       cursor: pointer;
       transform: scaleX(1.2);
-      margin-left: 50px;
     }
-  }
-
-  .heart img {
-    width: 5%;
   }
 
   .likes {
@@ -47,8 +43,13 @@ class Likes extends React.Component {
   render() {
     return (
       <LikesDiv>
-        <div className="heart">
-          <img alt="insta-heart" src={Heart} onClick={this.likePost} />
+        <div>
+          <img
+            className="heart"
+            alt="insta-heart"
+            src={Heart}
+            onClick={this.likePost}
+          />
         </div>
         <div className="likes">
           <strong>{this.state.likes} likes</strong>

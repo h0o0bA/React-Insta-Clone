@@ -9,12 +9,20 @@ import styled from "styled-components";
 const SearchContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
+  margin-top: 40px;
   margin-bottom: 40px;
 
 }
 .logo {
   margin-top: -20px;
+}
+.search {
+  margin-left: 30px;
+  
+}
+
+.searchButton {
+  margin-left: -70px;
 }
 
 .LogoutButton {

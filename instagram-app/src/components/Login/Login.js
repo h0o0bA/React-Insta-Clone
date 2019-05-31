@@ -66,7 +66,7 @@ class Login extends Component {
     return (
       <StyledDiv>
         <Form>
-          <div className="logintitle">Instagram</div>
+          <div className="logintitle">Ihab's Instagram</div>
           <Input
             name="username"
             onChange={this.databinder}
