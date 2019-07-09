@@ -1,0 +1,27 @@
+/* Searchbar CSS */
+.search-container {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.search-container form {
+  margin-left: 100px;
+}
+.search-container .logo {
+  margin-top: -15px;
+}
+
+.search {
+}
+
+.searchButton {
+  margin-top: 10px;
+  margin-left: -40px;
+}
+
+.LogoutButton {
+  margin-top: 10px;
+  margin-left: 140px;
+  margin-right: -50px;
+}
